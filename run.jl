@@ -1,19 +1,39 @@
+using Pkg
+Pkg.activate(".")
+
 using HTTP
-using JSON3
+using JSON
 
-# Define the request payload
-data = Dict(
-    "model" => "dolphin3:latest",  # or "mistral", "codellama", etc.
-    "prompt" => "Hello from Julia!"
-)
+const OLLAMA_URL = "http://localhost:11434/api/chat"
+const MODEL_NAME = "dolphin3:latest"
 
-# Make the POST request to Ollama
-response = HTTP.post(
-    "http://localhost:11434/api/generate",
-    ["Content-Type" => "application/json"],
-    JSON3.write(data)
-)
+function chat_with_ollama(messages::Vector{Dict{String, String}})
+    body = JSON.json(Dict(
+        "model" => MODEL_NAME,
+        "messages" => messages,
+        "stream" => false
+    ))
 
-# Parse and print
-parsed = JSON3.read(String(response.body))
-println(parsed.response)
+    headers = ["Content-Type" => "application/json"]
+    response = HTTP.post(OLLAMA_URL, headers, body)
+    data = JSON.parse(String(response.body))
+    return data["message"]["content"]
+end
+
+seed = "you roleplay santa claus"
+conversation = [
+    Dict("role" => "system", "content" => seed)
+]
+
+while true
+    print("You: ")
+    user_input = readline()
+
+    push!(conversation, Dict("role" => "user", "content" => user_input))
+
+    response = chat_with_ollama(conversation)
+    println("Ollama: $response")
+
+    push!(conversation, Dict("role" => "assistant", "content" => response))
+end
+
