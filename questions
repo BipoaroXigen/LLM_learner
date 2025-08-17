@@ -1,0 +1,123 @@
+• Can you explain the problem of overfitting?
+• What is the curse of dimensionality?
+• Given the results of an automatic classification and the associated ground truth, can you specify the confusion matrix? How would it look like for more than two classes?
+• What is the difference between supervised and unsupervised approaches?
+• Can you name and explain the steps involved in pattern recognition systems?
+• Is clustering a supervised or unsupervised method? How does the input data look like?
+• Assume you are given a discriminant function z(x) How do you determine the class of a new sample?
+• Can you describe in your words what the field of pattern recognition is about? Any application examples?
+• What’s the rationale of dividing the data into training, validation and test sets?
+###
+• How does Moore’s boundary tracing algorithm work? Which adaptation is required if the starting point is visited multiple times?
+• Which basic features of boundaries do you know?
+• What is a convex hull and which features can be derived from it?
+• What‘s a skeleton of a shape? Which features can be extracted from it?
+• How can you approximate a pixelated boundary with a polygon? Why‘s that useful?
+• Can you explain the two chain code representations? Which features can be derived from the chain codes?
+• What are signatures of a boundary? How can you extract statistical moments from a signature? How can the moments be interpreted?
+• Can you explain how Fourier descriptors can be computed for a 2D boundary? How can an approximation of the boundary be obtained? How to different transformations change the Fourier descriptors?
+###
+• Which basic region features do you know? What are the invariance properties of these features?
+• Which intensity-based features can be extracted? How can color information be used to derive features?
+• Can you explain how 2D moments are computed? How can the lower moments (up to moments of order 2) be interpreted? What are the benefits of defining moment invariants?
+• What information can be derived from the central moments of the intensity histograms? How are they computed? How does a histogram qualitatively look like for different values of kurtosis or skew?
+• Can you explain the concept of the co-occurrence matrix? How can the results be interpreted? How can you determine the periodicity of a pattern from the co-occurrence matrix?
+• How can you use the Fourier spectrum to infer information about the orientation and periodicity of a pattern? Can you explain the concept of integrating the spectrum along lines and shells? What information can be extracted from this?
+• What is the structure tensor? How is it computed and what information can you derive from it? Can you explain how structural information can be derived from the eigenvalues? In which directions do the eigenvectors point?
+###
+• What’s the general idea of the SIFT approach? What are typical applications of this approach?
+• Can you explain the general concept of scale-space feature extraction? Why is the scale-space used at all? How are unstable keypoints suppressed?
+• How is a rotation assigned to each keypoint? What happens if there are multiple prominent directions in the orientation histogram?
+• How are SIFT descriptors computed? Explain the rationale of soft binning and Gaussian weighting performed for the descriptor extraction.
+• How are the descriptors made invariant with respect to illumination variations? How do multiplicative contrast changes or additive brightness changes influence the descriptor values?
+• Explain how descriptors can be compared to each other. How can ambiguous matches be detected?
+• Can you name and explain one or more extensions/improvements of the classical SIFT approach? What are essential ideas for improvements?
+###
+• Why are probabilities useful?
+• Can you graphically explain the concept of joint probabilities, marginal probabilities and conditional probabilities?
+• Can you name and describe a discrete probability distribution? What are examples of processes that can be modeled with those distributions? How about a continuous distribution?
+• What is the concept of conditional probabilities? How is Bayes’ rule derived and what can it be used for?
+• Invent/search for an example of conditional probabilities that was not covered in the lecture (e.g., weather, spam filter, diagnosis, quiz…).
+• Explain the terms expectation and variance. How are they computed? What has to be considered for are discrete and continuous variables?
+• How do you compute a covariance matrix. What’s special about a covariance matrix with uncorrelated components?
+• Can you (roughly) sketch a two dimensional Gaussian with uncorrelated components? Can you qualitatively explain the Mahalanobis distance? What are the properties a metric has to fulfill?
+• What’s the concept of statistical inference about? Can you explain the terms biased and unbiased estimator? What’s the difference between maximum likelihood and maximum a posteriori estimation approaches?
+###
+• What is feature selection and why can it be useful?
+• Which conceptually different feature selection strategies do you know? Can you explain the differences between filter, wrapper and embedded approaches for feature selection?
+• Can you explain the difference between supervised and unsupervised feature selection?
+• How many possibilities are there for testing all feature combinations? How about forward and backward selection strategies?
+• How can good features be distinguished from bad features?
+• Can you explain the general idea of using ANOVA for feature selection? What’s the difference to MANOVA?
+• What category of feature selection do decision trees belong to? What’s the general concept of decision trees?
+• Explain the ID3 algorithm! How are good features identified during the tree construction?
+• How can continuous variables be converted, such that they may be used with the ID3 algorithm? How can you determine good threshold values for the discretization?
+• Give a simple example for computing the entropy of a set of values. When does the entropy become minimal / maximal? What’s the idea of information gain?
+###
+• What are feature transforms in general? What’s the potential benefit of feature transformation?
+• Which basic feature transformations do you know?
+• How does numerization/standardization/discretization work? Where does it make sense to apply such transformations?
+• Can you explain the rationale of the principal component analysis? Given a set of data points, which steps need to be performed to compute the PCA?
+• How can the data be approximated using PCA? Why is it useful to transform the data first?
+• On what kind of distributions do you expect a large/small improvement of the data representation via PCA?
+• What’s the difference between optimal representation vs. optimal separation?
+• What’s the general goal of the Linear Discriminant Analysis?
+• Can you explain the terms between- and within-group variance? How is Fisher’s LDA criterion derived from these terms?
+• How would you perform the final classification after transforming the data to 1D using LDA?
+• Is PCA an unsupervised or supervised approach? How about LDA?
+###
+• Explain the general aim of decision theory in your own words. Explain the terms decision function, decision boundary, decision regions, classifier.
+• Can you explain the difference between the Maximum Likelihood and the Maximum A Posteriori classification criterion? What happens if the prior probabilities for all classes are identical?
+• Describe the error regions of an univariate decision with two class-conditional normal distributions.
+• How do the decision boundaries change upon changing the position/standard deviation/priors of one/multipleclass-conditional densities?
+• Sketch a bivariate classification example with two classes, equal priors and equal covariance matrices. Can you explain the concept of Mahalanobis distances? When is the Mahalanobis distance identical to the Euclidean distance? Can you sketch an example where the Mahalanobis distance is smaller than the Euclidean?
+• What are generative/discriminative models? What’s different to a discriminant function?
+• Assume the different types of errors made by the classifier are differently important. How can you incorporate this notion of importance to the classification procedure?
+• Can you explain the basic idea of the naïve Bayes classifier? What are the particular assumptions made to facilitate the computations?
+###
+• Why is it sometimes problematic to use parametric models to estimate probability densities?
+• What is the general idea of nonparametric methods? Explain the concept of kernel density estimation!
+• What are potential drawbacks of the histogram approach? How about kernel density estimators with a hypercube kernel? How can these issues be solved?
+• How do the kernel parameters influence the estimated probability density? Could you also use kernels other than hypercubes or Gaussians?
+• How do K-nearest-neighbor approaches differ from kernel density estimation?
+• Can you explain how the prior/posterior/likelihood densities can be approximated with the K-nearest-neighbor algorithm? How can these quantities be used to classify new data points?
+• Draw and explain the nearest-neighbor rule (K=1). Sketch the decision regions for a small data set and explain how you derive them.
+• What is the general idea of maximum margin classifiers? What are the potential benefits of this approach?
+• Which parameters need to be optimized in order to find the maximum margin decision boundary? Why is it beneficial to solve the dual problem rather than the original objective function?
+• Assume you know the parameters of the SVM: how do you classify a new data point? Can you sketch this?
+• When would we want to consider a nonlinear SVM instead of a linear one? Can you explain the kernel trick?
+###
+• What is a perceptron and what kind of functions can be modeled with it? Can you give a geometrical interpretation of the perceptron? Assume you are provided with an input vector, how do you compute the output of the perceptron?
+• How do neurons in multilayer perceptrons differ from the classical perceptron design? Why is it important to use continuous and differentiable activation functions?
+• What are the components of a multilayer perceptron? Assume you have an architecture and pre-trained weights, how do you determine the network output given a certain input pattern?
+• Can you conceptually explain the training procedure of a multilayer perceptron? Which components are actually adapted? How do you compute the prediction error made by the network for a given training sample?
+• Explain the idea of gradient descent-based optimization of multidimensional functions. What is the learning rate and why is it important to choose is appropriately? Can you draw the concept of gradient descent?
+• How can gradient descent be used to train the network? How are the partial derivatives of the error function (conceptually) computed? How do you use the computed partial derivatives for training the network?
+• How can you check if the training process is successful? What are the benefits of using a small/large network with many hidden layers? How can you avoid overfitting? What might be the reason for underfitting?
+###
+• What’s the primary difference between convolutional neural networks and classical machine learning based approaches as discussed in the previous lectures?
+• What are potential application scenarios where CNNs may perform better compared to classical approaches?
+• Can you explain the concept of convolutional layers? What are filters? How are neurons connected in the convolutional neural network setting? How does backpropagation work for shared weights?
+• Can you give an example of the number of weights to be trained for a simple fully connected network and a simple convolutional pendant? Which hyperparameters have to be specified for a convolutional layer? How does the number of weights depend on these hyperparameters?
+• Explain the concept of pooling layers. What is the primary intention of pooling layers? Which hyperparameters have to be specified for pooling layers?
+• Where do you still find fully-connected layers in convolutional neural network architectures? Which activation is commonly used for multi-category output layers of a CNN?
+• Which building blocks are usually used to make up a CNN and how are they arranged to a full network?
+• Can you explain a few popular regularization strategies for CNNs? What are their primary intentions and how are they incorporated to the training process?
+###
+• Explain the general architecture of the VGG network. Which are the locations that require most processing operations? Which layer contains the largest number of weights?
+• What is the primary idea of the inception module? What is the problem of the naïve idea of the inception module? How is the number of feature maps constrained? How is the module embedded into the overall network architecture?
+• What are residual connections? What’s the general idea of these skip connections? Why can’t we just stack more and more layers on top of each other?
+• How does batch normalization roughly work? Why and when might it be beneficial to use batch normalization?
+• Why could it be important to reduce the number of trainable parameters in the network? How about the number of computations required?
+• Can you explain the concepts of transfer learning? Why and when is it useful to perform a fine-tuning of the weights? Under which circumstances should the pretrained network be used only as a fixed feature extractor?
+• Can you explain the general principle of adversarial attacks? How does adversarial training try to make the models more robust against adversarial attacks? What other methods to fool CNNs do you know?
+• What can CNNs (or variants of CNNs) be used for aside from pure classification?
+###
+• What is the general difference between supervised and unsupervised approaches? What is the general idea of clustering and why is it considered an unsupervised learning strategy?
+• What is a similarity matrix? How can we convert it to a dissimilarity matrix? Name a few (dis)similarity functions and explain the respective idea of (dis)similarity!
+• How does the K-means clustering algorithm work? What expectations are made with respect to the data distribution? Explain the steps performed for the iterative solution. How to apply it to cluster RGB images?
+• What is the idea of Gaussian mixture models? Why are they superior to K-Means and what are the differences? How does the iterative solution look like? Under which circumstances is it good/bad to use GMMs for clustering?
+• Explain the general ideas of the DBSCAN algorithm. Give an example of the asymmetry of (direct) density- reachability! How are clusters defined in DBSCAN and how does the algorithm work?
+• What are the benefits of DBSCAN compared to K-Means and GMMs? When does DBSCAN potentially fail?
+• How does hierarchical clustering work? Which general algorithmic variants do exist? How is similarity between data points/clusters defined? Which methods for agglomerating clusters do you know? How is the final clustering obtained? What are the benefits of hierarchical clustering compared to flat/partitional clustering?
+• Qualitatively draw a few scenarios where DBSCAN performs better than K-Means or GMMs. How about the other way round? When might hierarchical clustering be beneficial compared to K-Means and GMMs.
